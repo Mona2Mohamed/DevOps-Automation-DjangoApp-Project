@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>add data</h1>
+
+    <form method="POST" action="{% url 'add' %}">
+      {% csrf_token %}
+      
+    
+      <div class="form-group">
+        <label for="exampleInputPassword1">Unique ID </label>
+        <input type="number" class="form-control" aria-describedby="number"  name="id">
+      </div>
+
+        <div class="form-group">
+          <label for="exampleInputUsername">Username</label>
+          <input type="text" class="form-control"  aria-describedby="text" name="Username">
+        </div>
+
+      
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" aria-describedby="password"  placeholder="Password" name="Password">
+          </div>
+
+
+          
+
+
+          <div class="form-group">
+        <label for="exampleInputPassword2">Re-type</label>
+        <input type="password" class="form-control" aria-describedby="password" placeholder="Re-type Password" name="Re_type" id="retype_password">
+        </div>
+        <div id="password_mismatch_message" style="color: red;"></div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Email</label>
+          <input type="email" class="form-control" aria-describedby="emai"  >
+        </div>
+
+          <div class="form-group">
+            <label for="exampleInputFirstName">First Name</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" name="First_name" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputLastName">Last Name</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp"  name="Last_name">
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputDateOfBirth">Date of Birth</label>
+            <input type="date" class="form-control" aria-describedby="data"  name="DateOfBirth">
+          </div>
+        <button type="submit" class="btn btn-seconadry">Register</button>
+      
+        <script>
+          document.querySelector('form').addEventListener('submit', function (event) {
+              var password = document.querySelector('[name="Password"]').value;
+              var retypePassword = document.querySelector('[name="Re_type"]').value;
+      
+              if (password !== retypePassword) {
+                  document.getElementById('password_mismatch_message').textContent = 'Passwords do not match';
+                  event.preventDefault(); 
+              }
+          });
+      </script>
+      
+      </form>
+      
+  <button type="submit" class="btn btn-seconadry" id ="button2">fetch</button>
+
+<script>
+  var button2 = document.getElementById("button2");
+
+  button2.addEventListener("click", function() {
+    window.location.href = "fetch"; 
+  });
+</script>
+
+{% endblock %}

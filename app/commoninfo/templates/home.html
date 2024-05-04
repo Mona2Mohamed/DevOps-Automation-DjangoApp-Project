@@ -1,0 +1,29 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="patient_id">Enter Patient ID:</label>
+    <input type="text" name="patient_id" id="patient_id">
+    <button type="submit">Search</button>
+</form>
+
+
+
+
+{% if patient %}
+    <h1>Patient Found</h1>
+    <p>Username: {{ patient.Username }}</p>
+    <p>ID: {{ patient.id }}</p>
+    <p>Date of Birth: {{ patient.DateOfBirth }}</p>
+    {% else %}
+    <h1>Patient Not Found</h1>
+{% endif %}
+
+
+<button type="submit" id ="button1">ADD PATIENT</button>
+
+<script>
+  var button1 = document.getElementById("button1");
+
+  button1.addEventListener("click", function() {
+    window.location.href = "add"; 
+  });
+</script>

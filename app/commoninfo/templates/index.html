@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <h1>Patient Application</h1>
+  <h1>Cloud Architecture</h1>
+</head>
+<body>
+  <div>
+
+  </div>
+  <button id="button1">ADD NEW USER</button>
+    <button id="button2">SHOW USER</button>
+  
+<script>
+    var button1 = document.getElementById("button1");
+    var button2 = document.getElementById("button2");
+
+    button1.addEventListener("click", function() {
+      window.location.href = "commoninfo/add"; 
+    });
+
+    button2.addEventListener("click", function() {
+      window.location.href = "commoninfo/fetch"; 
+    });
+</script>
+</body>
+</html>
