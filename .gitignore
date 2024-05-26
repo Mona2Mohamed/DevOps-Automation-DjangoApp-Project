@@ -1,0 +1,12 @@
+.history/*
+commoninfo/*
+*.log
+*.pot
+*.pyc
+db.sqlite3
+/static/
+/media/
+local_settings.py
+/deploy/
+/.vscode/
+virtual/
