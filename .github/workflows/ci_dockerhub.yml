@@ -25,5 +25,5 @@ jobs:
           REPOSITORY: django_app
           IMAGE_TAG: v2
         run: |
-          docker build -t ${{ secrets.SECRET_DOCKERHUB_USERNAME}}/$REPOSITORY:$IMAGE_TAG -f E:\ITI9Months\DevOps\Doker_images\DevOps-Automation-DjangoApp-Project\Dockerfile
+          docker build -t ${{ secrets.SECRET_DOCKERHUB_USERNAME}}/$REPOSITORY:$IMAGE_TAG -f ../Dockerfile
           docker push ${{ secrets.SECRET_DOCKERHUB_USERNAME}}/$REPOSITORY:$IMAGE_TAG
